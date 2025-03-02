@@ -9,8 +9,8 @@ def show_static_model_info():
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestRegressor
     from sklearn.metrics import mean_absolute_error, r2_score
-    df = pd.read_csv("predicted_values.csv")
-    model_results = pd.read_csv("model_results.csv")
+    df = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/predicted_values.csv")
+    model_results = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/model_results.csv")
     # Load dataset
     @st.cache_data
     def load_data():
