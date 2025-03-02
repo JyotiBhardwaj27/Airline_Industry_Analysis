@@ -5,12 +5,12 @@ def show_insights():
     import seaborn as sns
     import zipfile
 
-   zip_path = "/mount/src/airline_industry_analysis/Dashboard/season_map.zip"  # Path to your ZIP file
-   csv_filename = "season_map.csv"  # Name of the CSV inside the ZIP
+    zip_path = "/mount/src/airline_industry_analysis/Dashboard/season_map.zip"  # Path to your ZIP file
+    csv_filename = "season_map.csv"  # Name of the CSV inside the ZIP
 
-   with zipfile.ZipFile(zip_path, 'r') as z:
-   with z.open(csv_filename) as f:
-   season_data = pd.read_csv(f)
+    with zipfile.ZipFile(zip_path, 'r') as z:
+    with z.open(csv_filename) as f:
+    season_data = pd.read_csv(f)
 
 
 
