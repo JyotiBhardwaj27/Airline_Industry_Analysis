@@ -6,7 +6,7 @@ def show_insights():
 
 
     # Load Data
-    df = pd.read_csv("predicted_values.csv")
+    df = pd.read_csv("/Dashboard/predicted_values.csv")
     model_results = pd.read_csv("model_results.csv")
     season_data = pd.read_csv("season_map.csv")
     
