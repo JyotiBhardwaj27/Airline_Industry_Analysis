@@ -1,3 +1,6 @@
+import sys
+sys.path.append("/mount/src/airline_industry_analysis/Dashboard")
+
 import streamlit as st
 from Insights import show_insights
 from Static_model_info import show_static_model_info
