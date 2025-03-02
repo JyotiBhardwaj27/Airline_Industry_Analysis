@@ -6,9 +6,9 @@ def show_insights():
 
 
     # Load Data
-    ddf = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/predicted_values.csv")
-    model_results = pd.read_csv("model_results.csv")
-    season_data = pd.read_csv("season_map.csv")
+    df = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/predicted_values.csv")
+    model_results = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/model_results.csv")
+    season_data = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/season_map.csv")
     
     # Standardizing Column Names
     df.columns = df.columns.str.strip()
