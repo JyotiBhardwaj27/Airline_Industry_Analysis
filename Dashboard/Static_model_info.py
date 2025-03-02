@@ -14,7 +14,7 @@ def show_static_model_info():
     # Load dataset
     @st.cache_data
     def load_data():
-        df = pd.read_excel("Aviation_KPIs_Dataset.xlsx")
+        df = pd.read_excel("/mount/src/airline_industry_analysis/Dashboard/Aviation_KPIs_Dataset.xlsx")
         return df
     
     df = load_data()
