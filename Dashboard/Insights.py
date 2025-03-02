@@ -10,11 +10,9 @@ def show_insights():
     csv_filename = "season_map.csv"  # Name of the CSV inside the ZIP
 
     with zipfile.ZipFile(zip_path, 'r') as z:
-    with z.open(csv_filename) as f:
-    season_data = pd.read_csv(f)
-
-
-
+        with z.open(csv_filename) as f:
+            season_data = pd.read_csv(f)
+       
     # Load Data
     df = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/predicted_values.csv")
     model_results = pd.read_csv("/mount/src/airline_industry_analysis/Dashboard/model_results.csv")
