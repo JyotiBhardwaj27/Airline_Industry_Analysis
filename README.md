@@ -1,4 +1,4 @@
-For Dashboard please watch the ppt - https://drive.google.com/file/d/14ymBWzs503E1rAYG7vDD7nN8xhypiJ3U/view?usp=sharing
+For Dashboard please watch the project presentation video - https://drive.google.com/file/d/14ymBWzs503E1rAYG7vDD7nN8xhypiJ3U/view?usp=sharing
 
 # Aviation Profit Prediction Streamlit App
 
