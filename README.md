@@ -1,79 +1,74 @@
-# Flight Profitability Prediction Streamlit App
+# Aviation Profit Prediction Streamlit App
 
 ## Overview
-This Streamlit application is designed to predict flight profitability using machine learning. The app preprocesses uploaded datasets, trains a Random Forest Regressor model, and provides insights through various performance metrics and KPIs.
+The Aviation Profit Prediction Streamlit app is designed to provide insights and predictions on airline profitability. The app leverages a machine learning model (Random Forest Regressor) and offers rich visualizations and metrics through a user-friendly interface with three primary tabs: **Insights**, **Static Model Info**, and **Live Model Updates**.
+
+## Application Structure
+The application is organized into the following files:
+- `main.py`: Launches the app and creates navigation tabs.
+- `Insights.py`: Displays key performance indicators and insights.
+- `Static_model_info.py`: Shows static information about the trained model.
+- `Live_Model_Updates.py`: Provides live predictions and updates using the pre-trained model.
+
 
 ## Features
-1. **Model Performance Tab:**
-   - Trains a Random Forest Regressor on the uploaded dataset.
-   - Displays R² Score and Mean Absolute Error (MAE) to evaluate the model's performance.
-   
-2. **KPI Visualization Tab:**
-   - Provides key performance indicators based on the predicted data.
-   - Includes insights on cost efficiency, fleet utilization, load factor, and profit margin ratios.
+1. **Insights Tab:**
+   - Provides visualizations and analysis of profitability metrics.
+   - Displays KPIs such as cost efficiency, load factor, and fleet utilization.
 
-3. **Model Results Tab:**
-   - Displays predictions and insights based on the model's output.
-   - Offers comparisons between predicted and actual profitability.
+2. **Static Model Info Tab:**
+   - Shows model performance metrics (R² Score, Mean Absolute Error).
+   - Describes the Random Forest Regressor model with key hyperparameters.
 
-4. **Dataset Testing Tab:**
-   - Allows users to test another dataset with the same structure.
-   - Uses the pre-trained model to predict profitability for new data.
-
-## Installation and Usage
-### Prerequisites:
-- Python 3.x
-- Streamlit
-- Pandas
-- Scikit-learn
-- Joblib
-- NumPy
-
-### Steps to Run the Application:
-1. Install dependencies:
-   ```bash
-   pip install streamlit pandas scikit-learn joblib numpy
-   ```
-2. Run the Streamlit application:
-   ```bash
-   streamlit run app.py
-   ```
-3. Upload a dataset (CSV or Excel) through the sidebar.
-4. Navigate between tabs to explore model performance, KPIs, results, and dataset testing.
+3. **Live Model Updates Tab:**
+   - Allows testing of new datasets with the pre-trained model.
+   - Displays predicted profitability and comparison with actual values.
 
 ## Data Preprocessing
-- Handles missing values by filling numeric columns with their median values.
-- Feature engineering includes:
-  - Cost efficiency calculation
-  - Utilization efficiency computation
-  - Fleet and load efficiency metrics
-  - Time-based transformations (season, delay category)
-  
-## Model Training
-- Uses **RandomForestRegressor** with optimized hyperparameters:
+- Fills missing numeric values with medians.
+- Feature engineering steps include:
+  - Cost and fleet utilization metrics.
+  - Load factor calculations.
+  - Seasonality and delay categorization.
+
+## Model Details
+- Model: **RandomForestRegressor**
+- Key Hyperparameters:
   - `n_estimators=200`
   - `max_depth=10`
   - `min_samples_split=5`
   - `min_samples_leaf=2`
-- StandardScaler is applied to normalize features.
-- The trained model and scaler are saved using Joblib for future use.
+- Preprocessing: **StandardScaler** for feature normalization
+- Model Persistence: Uses **Joblib** to save/load the model and scaler.
+
+## Installation
+### Prerequisites
+Ensure you have Python 3.x and the required libraries installed.
+```bash
+pip install streamlit pandas scikit-learn joblib numpy
+```
+
+### Running the App
+```bash
+streamlit run main.py
+```
+- Upload a dataset (CSV or Excel) via the sidebar.
+- Navigate through tabs to explore insights, model info, and predictions.
 
 ## Expected Dataset Format
-Ensure that the dataset includes the following columns:
+Ensure the dataset includes these columns:
 - `Operating Cost (USD)`, `Revenue (USD)`, `Profit (USD)`
 - `Aircraft Utilization (Hours/Day)`, `Turnaround Time (Minutes)`
 - `Net Profit Margin (%)`, `Fleet Availability (%)`, `Load Factor (%)`
-- `Scheduled Departure Time`, `Actual Departure Time`
-- `Delay (Minutes)`
+- `Scheduled Departure Time`, `Actual Departure Time`, `Delay (Minutes)`
 
-If certain columns are missing, default values are used to maintain feature consistency.
+If certain columns are missing, default values are applied to maintain consistency.
 
 ## Future Enhancements
-- Implement feature selection for better interpretability.
-- Improve visualization of KPIs and model results.
-- Add user-defined model tuning options.
+- Add feature selection options for model tuning.
+- Improve visualization of live model updates.
+- Enable user-defined model parameter adjustments.
 
 ## Contributors
-Developed as part of a data analytics project to predict airline profitability and optimize fleet efficiency.
-
+Developed as part of a data analytics project focused on airline profitability and operational efficiency.
 
